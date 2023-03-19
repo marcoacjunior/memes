@@ -1,7 +1,6 @@
 package com.meme.dto;
 
-
-import com.meme.domain.Usuario;
+import com.meme.domain.CategoriaMeme;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,18 +11,25 @@ import java.time.LocalDateTime;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsuarioDTO {
+public class CategoriaMemeDTO {
 
     private Long id;
-    private String nome;
-    private String email;
+
+    private String nomeCategoria;
+
+    private String descricao;
+
     private LocalDateTime dataCadastro;
 
-    public UsuarioDTO(Usuario entity) {
+    private String usuario;
+
+    public CategoriaMemeDTO(CategoriaMeme entity) {
         id = entity.getId();
-        nome = entity.getNome();
-        email = entity.getEmail();
+        nomeCategoria = entity.getNomeCategoria();
+        descricao = entity.getDescricao();
         dataCadastro = entity.getDataCadastro();
+        usuario = entity.getUsuario();
+
     }
 
 }
