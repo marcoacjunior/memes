@@ -1,9 +1,8 @@
-package com.meme.domain.service;
+package com.meme.service;
 
 import com.meme.domain.CategoriaMeme;
 import com.meme.dto.CategoriaMemeDTO;
 import com.meme.repositories.CategoriaMemeRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

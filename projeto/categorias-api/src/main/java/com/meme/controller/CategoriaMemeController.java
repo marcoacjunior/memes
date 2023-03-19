@@ -1,20 +1,15 @@
-package com.meme.domain.controller;
+package com.meme.controller;
 
-import com.meme.domain.service.CategoriaMemeService;
 import com.meme.dto.CategoriaMemeDTO;
-
-import java.net.URI;
-
+import com.meme.service.CategoriaMemeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
 
 @RestController
 @RequestMapping(value = "/memelandia")

@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: memes-api
+server:
+  port: 8200
