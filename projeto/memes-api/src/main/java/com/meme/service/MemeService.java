@@ -38,7 +38,7 @@ public class MemeService {
         Meme entity = new Meme();
         entity.setNome(dto.getNome());
         entity.setDescricao(dto.getDescricao());
-        entity.setImgUrl();
+        entity.setImgUrl(dto.getImgUrl());
         entity.setDataCadastro(dto.getDataCadastro());
         entity.setCategoriaMeme(dto.getCategoriaMeme());
         entity.setUsuario(dto.getUsuario());

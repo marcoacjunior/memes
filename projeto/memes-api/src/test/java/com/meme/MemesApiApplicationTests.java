@@ -15,12 +15,12 @@ class MemesApiApplicationTests {
 
 		Meme entity = new Meme();
 		entity.setId(1L);
-		entity.setNome("Chapolin")Chapolin
-		entity.setDescricao("Imagens relacionados a personalidades da política");
+		entity.setNome("Chapolin");
+		entity.setDescricao("Chapolin Sincero");
 		entity.setImgUrl("https://img.r7.com/images/2014/08/26/9foghewoij_26xncb11n5_file?dimensions=500x543");
 		entity.setDataCadastro(LocalDateTime.now());
-		entity.setCategoriaMeme("1");
-		entity.setUsuario("1");
+		entity.setCategoriaMeme("3");
+		entity.setUsuario("2");
 
 		Assertions.assertNotNull(entity.getId());
 		Assertions.assertNotNull(entity.getDescricao());
