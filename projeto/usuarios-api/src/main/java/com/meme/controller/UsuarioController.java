@@ -2,6 +2,7 @@ package com.meme.controller;
 
 import com.meme.dto.UsuarioDTO;
 import com.meme.service.UsuarioService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +13,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/memelandia")
+@Slf4j
 public class UsuarioController {
 
     @Autowired
     private UsuarioService service;
+
+    @GetMapping
+    public String status(){
+        log.info("Obtendo o status do microservice de usuarios");
+        return "ok";
+    }
 
     @GetMapping(value = "/usuarios")
     public ResponseEntity<List<UsuarioDTO>> findAll() {

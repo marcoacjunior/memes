@@ -2,6 +2,7 @@ package com.meme.controller;
 
 import com.meme.dto.MemeDTO;
 import com.meme.service.MemeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,10 +15,17 @@ import java.net.URI;
 
 @RestController
 @RequestMapping(value = "/memelandia")
+@Slf4j
 public class MemeController {
 
     @Autowired
     private MemeService service;
+
+    @GetMapping
+    public String status(){
+        log.info("Obtendo o status do microservice de memes");
+        return "ok";
+    }
 
     @GetMapping(value = "/memes")
     public ResponseEntity<Page<MemeDTO>> findAll(
