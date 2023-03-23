@@ -1,45 +1,48 @@
 package com.meme.domain;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
+@Document(collection = "meme")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity(name = "TB_MEME")
+@Builder
 public class Meme {
 
-    @EqualsAndHashCode.Include
     @Id
-    @GeneratedValue(strategy = IDENTITY)
-    private Long id;
+    private String id;
 
-    @Column(name = "nome", nullable = false)
+    @NotNull
+    @Size(min = 1, max = 50)
     private String nome;
 
-    @Column(name = "descricao", nullable = false)
+    @NotNull
+    @Size(min = 1, max = 50)
     private String descricao;
 
-    @Column(name = "imagem", nullable = false)
+    @NotNull
     private String imgUrl;
 
-    @JsonFormat(pattern = "dd/MM/yyyy hh:MM:ss")
-    @Column(name = "data_cadastro", nullable = false)
+    @NotNull
     private LocalDateTime dataCadastro;
 
-    @Column(name = "categoria_meme_id")
+    @NotNull
     private String categoriaMeme;
 
-    @Column(name = "usuario_id")
+    @NotNull
     private String usuario;
 
 

@@ -3,6 +3,7 @@ package com.meme.service;
 import com.meme.domain.CategoriaMeme;
 import com.meme.dto.CategoriaMemeDTO;
 import com.meme.repositories.CategoriaMemeRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@RequiredArgsConstructor
 public class CategoriaMemeService {
 
     @Autowired
@@ -22,15 +24,15 @@ public class CategoriaMemeService {
 
     }
 
-
     @Transactional
     public CategoriaMemeDTO insert(CategoriaMemeDTO dto) {
         CategoriaMeme entity = new CategoriaMeme();
         entity.setNomeCategoria(dto.getNomeCategoria());
         entity.setDescricao(dto.getDescricao());
         entity.setDataCadastro(dto.getDataCadastro());
-        entity.setUsuario(dto.getUsuario());
+        entity.setUsuarioId(dto.getUsuarioId());
         entity = repository.save(entity);
         return new CategoriaMemeDTO(entity);
     }
+
 }

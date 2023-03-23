@@ -14,7 +14,7 @@ class UsuariosApiApplicationTests {
 	public void UsuarioDeveTerEstrututraCorreta() {
 
 		Usuario entity = new Usuario();
-		entity.setId(1L);
+		entity.setId("1");
 		entity.setNome("Plinio");
 		entity.setEmail("plinio@gmail.com");
 		entity.setDataCadastro(LocalDateTime.now());

@@ -1,8 +1,9 @@
-package com.meme.service;
+package com.meme.services;
 
 import com.meme.domain.Usuario;
 import com.meme.dto.UsuarioDTO;
 import com.meme.repositories.UsuarioRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class UsuarioService {
 
     @Autowired

@@ -1,6 +1,9 @@
 spring:
   application:
     name: categorias-api
+    data:
+      mongodb:
+        uri: mongodb://localhost/categorias-api
 
 server:
   port: 0
@@ -16,5 +19,8 @@ management:
   endpoints:
     web:
       exposure:
-        include:
-          - '*'
+        include: '*'
+
+logging:
+  file:
+    name: ./logs/log-file.log

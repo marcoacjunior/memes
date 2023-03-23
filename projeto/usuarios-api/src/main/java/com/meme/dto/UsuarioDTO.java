@@ -1,6 +1,5 @@
 package com.meme.dto;
 
-
 import com.meme.domain.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,10 +19,8 @@ public class UsuarioDTO {
     private LocalDateTime dataCadastro;
 
     public UsuarioDTO(Usuario entity) {
-        id = entity.getId();
         nome = entity.getNome();
         email = entity.getEmail();
         dataCadastro = entity.getDataCadastro();
     }
-
 }

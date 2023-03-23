@@ -1,38 +1,40 @@
 package com.meme.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
-@Getter @Setter
+@Document(collection = "usuario")
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity(name = "TB_USUARIO")
+@Builder
 public class Usuario {
 
-    @EqualsAndHashCode.Include
     @Id
-    @GeneratedValue(strategy = IDENTITY)
-    private Long id;
+    private String id;
 
-    @Column(name = "nome", nullable = false)
+    @NotNull
+    @Size(min = 1, max = 50)
     private String nome;
 
-    @Column(name = "email", nullable = false)
+    @NotNull
+    @Size(min = 1, max = 50)
     private String email;
 
-    @JsonFormat(pattern = "dd/MM/yyyy hh:MM:ss")
-    @Column(name = "data_cadastro", nullable = false)
+    @NotNull
     private LocalDateTime dataCadastro;
 
 }

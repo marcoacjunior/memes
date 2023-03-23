@@ -1,7 +1,7 @@
 package com.meme.controller;
 
 import com.meme.dto.UsuarioDTO;
-import com.meme.service.UsuarioService;
+import com.meme.services.UsuarioService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +38,4 @@ public class UsuarioController {
                 .buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
-
-
 }

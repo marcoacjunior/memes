@@ -14,15 +14,16 @@ class CategoriasApiApplicationTests {
 	public void CategoriaMemeDeveTerEstrututraCorreta() {
 
 		CategoriaMeme entity = new CategoriaMeme();
-		entity.setId(1L);
+		entity.setId("1");
 		entity.setNomeCategoria("Política");
 		entity.setDescricao("Imagens relacionados a personalidades da política");
 		entity.setDataCadastro(LocalDateTime.now());
-		entity.setUsuario("1");
+		entity.setUsuarioId("1");
+
 
 		Assertions.assertNotNull(entity.getId());
 		Assertions.assertNotNull(entity.getNomeCategoria());
 		Assertions.assertNotNull(entity.getDescricao());
 		Assertions.assertNotNull(entity.getDataCadastro());
-		Assertions.assertNotNull(entity.getUsuario());
+		Assertions.assertNotNull(entity.getUsuarioId());
 }}

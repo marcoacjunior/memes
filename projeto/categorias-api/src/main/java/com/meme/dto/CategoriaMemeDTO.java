@@ -12,23 +12,22 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoriaMemeDTO {
-
-    private Long id;
+    private String id;
 
     private String nomeCategoria;
-
     private String descricao;
 
     private LocalDateTime dataCadastro;
 
-    private String usuario;
+    private String usuarioId;
+
 
     public CategoriaMemeDTO(CategoriaMeme entity) {
-        id = entity.getId();
-        nomeCategoria = entity.getNomeCategoria();
-        descricao = entity.getDescricao();
-        dataCadastro = entity.getDataCadastro();
-        usuario = entity.getUsuario();
+        this.id = entity.getId();
+        this.nomeCategoria = entity.getNomeCategoria();
+        this.descricao = entity.getDescricao();
+        this.dataCadastro = entity.getDataCadastro();
+        this.usuarioId = entity.getUsuarioId();
 
     }
 

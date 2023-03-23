@@ -4,6 +4,7 @@ import com.meme.domain.Meme;
 import com.meme.dto.MemeDTO;
 import com.meme.repositories.MemeRepository;
 import com.meme.service.exceptions.ResourceNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class MemeService {
 
     @Autowired
@@ -26,7 +28,7 @@ public class MemeService {
     }
 
     @Transactional(readOnly = true)
-    public MemeDTO findById(Long id) {
+    public MemeDTO findById(String id) {
         Optional<Meme> obj = repository.findById(id);
         Meme entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
         return new MemeDTO(entity);

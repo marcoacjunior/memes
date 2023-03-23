@@ -42,7 +42,7 @@ public class MemeController {
     }
 
     @GetMapping(value = "/memes/{id}")
-    public ResponseEntity<MemeDTO> findById(@PathVariable Long id) {
+    public ResponseEntity<MemeDTO> findById(@PathVariable String id) {
         MemeDTO dto = service.findById(id);
         return ResponseEntity.ok().body(dto);
     }

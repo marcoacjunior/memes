@@ -10,7 +10,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.List;
 
 @SpringBootApplication
 @EnableEurekaClient

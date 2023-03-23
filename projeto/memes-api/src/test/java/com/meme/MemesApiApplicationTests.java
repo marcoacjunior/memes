@@ -14,7 +14,7 @@ class MemesApiApplicationTests {
 	public void MemeDeveTerEstrututraCorreta() {
 
 		Meme entity = new Meme();
-		entity.setId(1L);
+		entity.setId("1");
 		entity.setNome("Chapolin");
 		entity.setDescricao("Chapolin Sincero");
 		entity.setImgUrl("https://img.r7.com/images/2014/08/26/9foghewoij_26xncb11n5_file?dimensions=500x543");

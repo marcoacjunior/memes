@@ -13,13 +13,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class MemeDTO {
 
-    private Long id;
+    private String id;
     private String nome;
     private String descricao;
-
     private String imgUrl;
     private LocalDateTime dataCadastro;
     private String categoriaMeme;
+
     private String usuario;
 
     public MemeDTO(Meme entity) {
